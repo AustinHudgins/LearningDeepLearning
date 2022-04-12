@@ -38,7 +38,6 @@ def timing_python_vs_numpy():
 
 
 def basic_arrays():
-
     num = input("How many dimensions do you want the array to be?:\n")
     print(num)
     if num == str(1):
@@ -68,7 +67,7 @@ def basic_arrays():
         print("the 2D array is ")
         print(c)
 
-        print("This is the shape of the 2D array ", end ="")
+        print("This is the shape of the 2D array ", end="")
         print(c.shape)
 
         print("This is the size of the 2D array ", end="")
@@ -103,5 +102,60 @@ def basic_arrays():
         print(e.size)
 
 
+def accessing_elements_in_an_array():
+    # creates a 2d array that has 3 vectors of 4 elements each
+    b = np.zeros((3, 4), dtype='uint8')
+    print(b)
+
+    # You can change single cells in a matrix by telling which row and column
+    b[0, 1] = 1
+    b[1, 0] = 2
+    print("Array b with cells [0,1] and [1,0] changed")
+    print(b)
+
+    # You can also print out entire vectors inside the matrix
+    print("This is the second vector in the array")
+    print(b[1])
 
 
+def slicing_an_array():
+    # You can create arrays filled up to but not including a number like this, in this case 0 - 19
+    a = np.arange(20)
+    print("An array filled 0-19")
+    print(a)
+
+    # You can choose to print specific number range that will include the first number but exclude the last number
+    print("The following is segmented parts of array A")
+    print(a[1:4])
+    print(a[5:18])
+
+    # You can also choose a specific range and the amount of steps between each number
+    print("the following is the same segmented parts of array A but with different steps between each number")
+    print(a[1:4:2])
+    print(a[5:18:3])
+
+    # If you skip the starting number you will start with the first number in the array
+    # If you skip the ending number you will end at the last number in the array
+    print("The following is sliced arrays with missing starting and then ending ranges")
+    print(a[:4])
+    print(a[16:])
+
+    # In python, you can easily print arrays backwards with the use of negative numbers
+    print("You can easily print the last index in the array with -1")
+    print(a[-1])
+
+    # To print the array backwards you need you skip the starting and ending of the array to print the entire array
+    # but the step is -1
+    print("The following is the array printed backwards")
+    print(a[::-1])
+
+    # You can even reshape the entire array into different shaped matrices
+    print("Here is the array before its reshaped")
+    b = np.arange(40)
+    print(b)
+    # The reshape method must be multiplied together to get the size of the array
+    # i.e 4 * 10 = 40
+    print("Here is the array after its reshaped")
+    print(b.reshape((4, 10)))
+    print("Since its 40 elements you can do 4 by 10, since 4 * 10 = 40.")
+    print("You could also do in orientation as long as it multiplies to the number of elements")

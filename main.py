@@ -8,8 +8,11 @@ def print_hi(name):
 
 if __name__ == '__main__':
     print_hi('PyCharm')
-    print("2")
 
-    timing_python_vs_numpy()
-    basic_arrays()
+    # timing_python_vs_numpy()
+    # basic_arrays()
+    # accessing_elements_in_an_array()
+    slicing_an_array()
+
+
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
