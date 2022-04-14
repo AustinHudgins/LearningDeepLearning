@@ -12,7 +12,9 @@ if __name__ == '__main__':
     # timing_python_vs_numpy()
     # basic_arrays()
     # accessing_elements_in_an_array()
-    slicing_an_array()
-
+    # slicing_an_array()
+    # the_ellipsis()
+    # operations_and_broadcasting()
+    array_input_and_output()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

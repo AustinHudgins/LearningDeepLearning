@@ -156,6 +156,114 @@ def slicing_an_array():
     # The reshape method must be multiplied together to get the size of the array
     # i.e 4 * 10 = 40
     print("Here is the array after its reshaped")
-    print(b.reshape((4, 10)))
+    b = b.reshape((4, 10))
+    print(b)
     print("Since its 40 elements you can do 4 by 10, since 4 * 10 = 40.")
     print("You could also do in orientation as long as it multiplies to the number of elements")
+
+    # With different shaped matrices you can be explicit and tell it where to slice
+    print("Here is a sliced matrix printed out")
+    print(b[3:, 2:])
+    print(b[0:1, :])
+    # Not 100% sure what the comma means.
+
+
+def the_ellipsis():
+    c = np.arange(27).reshape((3, 3, 3))
+    # 3 * 3 * 3 = 27 so reshape is possible
+    print("a 3d array 0-26  reshaped into 3, 3, 3")
+    print(c)
+
+    a = np.ones((3, 3))
+    print("a 2 by 2 matrix of ones")
+    print(a)
+
+    # since the C matrix is 3 matrixs of 3 by 3 stacked on top you can change one of the 3 by 3s like the following
+
+    c[1, :, :] = a
+    print(" setting the 2nd 3 by 3 into all ones")
+    print(c)
+
+    # we can use [0,...] to specify all the other indices of the tensor like this
+    c[0, ...] = a
+    print(c)
+
+def operations_and_broadcasting():
+    # Broadcasting is the use of an operation on the enitre array or matrix
+    a = np.arange(5)
+    print(a)
+    # array A but backwards
+    c = a[::-1]
+    print("backwards")
+    print(c)
+
+    # you can do broadcasting like the following
+    print("array A * 3.14")
+    print(a * 3.14)
+
+    print("array A * A, or A^2")
+    print(a * a)
+
+    print("array A * C")
+    print(a * c)
+
+    print("Scales C by +1 then use integer division ")
+    print(a // (c + 1))
+
+    # Broadcasting also applies to multipling vectors by matrixs, although the way its done is slightly different
+    b = np.arange(25).reshape(5, 5)
+    print(a)
+    print("multiplied by")
+    print(b)
+    print("is equal to the following")
+    print(a * b)
+
+    # Dot multiplication is of the vectors then those elements added together
+    # [0,1,2,3,4,5] * [0,1,2,3,4,5] = [0,1,4,9,16] = > 0 + 1 + 4 +9 + 16 = 30
+
+    x = np.arange(5)
+    print(np.dot(x, x))
+
+    # Dot can also be done on matrices like the following
+    z = np.arange(16).reshape(4, 4)
+    y = np.arange(16).reshape(4, 4)
+    v = np.dot(z, y)
+    print(v)
+
+
+def array_input_and_output():
+
+    # With Python, you can load arrays from files in numerous ways
+    # using a standard text files with spaces
+    a = np.loadtxt("test.txt")
+    print("text file with spaces")
+    print(a)
+
+    # using a text fies separated by tab spaces
+    b = np.loadtxt("test_tab.txt")
+    print("text file with tabs")
+    print(b)
+
+    # using a CSV, comma separated file but you have to tell it what is repeating the indexes
+    c = np.loadtxt("test_comma.csv", delimiter=",")
+    print("CSV, comma separated file.")
+    print(c)
+
+    # you can also save numpy matrixes to a file with.
+    # Use .save if you want to save it as a numpy matrix, they are loaded but with .load not .loadtxt
+    d = np.arange(25).reshape(5,5)
+    np.save("test_d.npy", d)
+    # use .savetxt if you want  to save as a text file
+    np.savetxt("test_d.txt", d)
+
+    # you can also store multiple matrix in one file with .savez
+    np.savez("test_multiple_matrices", a=a, b=b, d=d)
+    # then you can access the individual matrix like a dictionary
+    r = np.load("test_multiple_matrices.npz")
+    # get a list of all the keys in the multiple matrix file called r
+    print("A list of the matrices in the file")
+    print(list(r.keys()))
+    print(r["d"])
+
+def random_numbers():
+    print("here")
