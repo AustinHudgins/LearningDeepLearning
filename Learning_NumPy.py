@@ -1,6 +1,8 @@
 import numpy as np
 import time
 import random
+from PIL import Image
+from sklearn.datasets import load_sample_images
 
 
 def timing_python_vs_numpy():
@@ -188,6 +190,7 @@ def the_ellipsis():
     c[0, ...] = a
     print(c)
 
+
 def operations_and_broadcasting():
     # Broadcasting is the use of an operation on the enitre array or matrix
     a = np.arange(5)
@@ -232,7 +235,6 @@ def operations_and_broadcasting():
 
 
 def array_input_and_output():
-
     # With Python, you can load arrays from files in numerous ways
     # using a standard text files with spaces
     a = np.loadtxt("test.txt")
@@ -251,7 +253,7 @@ def array_input_and_output():
 
     # you can also save numpy matrixes to a file with.
     # Use .save if you want to save it as a numpy matrix, they are loaded but with .load not .loadtxt
-    d = np.arange(25).reshape(5,5)
+    d = np.arange(25).reshape(5, 5)
     np.save("test_d.npy", d)
     # use .savetxt if you want  to save as a text file
     np.savetxt("test_d.txt", d)
@@ -265,5 +267,39 @@ def array_input_and_output():
     print(list(r.keys()))
     print(r["d"])
 
-def random_numbers():
-    print("here")
+
+def numpy_and_images():
+    # using numpy you can convert images to matrices
+    # using PIL you can read and write images
+
+    china = load_sample_images().images[0]
+    flower = load_sample_images().images[1]
+
+    # Using .shape of an array you can see the resolution of the image and the RGB vaules of the pixels
+    print(" The resolution is 427 pixels by 640 pixels and the 3 is the RGB of each pixel")
+    print(str(china.shape))
+    print(str(flower.shape))
+
+    # makes sure its in the right format to convert to an image
+    imchina = Image.fromarray(china)
+    imflower = Image.fromarray(flower)
+
+    # displays images
+    # imchina.show()
+    # imflower.show()
+
+    # saving an image to your files
+    imflower.save("flower.png")
+    imchina.save("china.png")
+
+    # reading image from a file
+    im = Image.open("china.png")
+    img = np.array(im)
+    # you can convert the image to other formats in this case to a gray scale.
+    grayim = im.convert("L")
+    # grayim.show()
+
+    # convert the gray image to a array
+    g = np.array(grayim)
+    print("here is the same china image but in gray, notice the image loses the 3 rgb vaules.")
+    print(str(g.shape))

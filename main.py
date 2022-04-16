@@ -15,6 +15,6 @@ if __name__ == '__main__':
     # slicing_an_array()
     # the_ellipsis()
     # operations_and_broadcasting()
-    array_input_and_output()
-
+    # array_input_and_output()
+    numpy_and_images()
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
