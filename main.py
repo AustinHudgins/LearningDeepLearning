@@ -1,6 +1,6 @@
 # Imports every method from my Learning_Numpy class.
 from Learning_NumPy import *
-
+from Working_With_data import *
 
 def print_hi(name):
     print(f'Hi, {name}')
@@ -16,5 +16,6 @@ if __name__ == '__main__':
     # the_ellipsis()
     # operations_and_broadcasting()
     # array_input_and_output()
-    numpy_and_images()
+    # numpy_and_images()
+    method()
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

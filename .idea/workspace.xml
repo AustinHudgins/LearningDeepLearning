@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff59c65c-21e4-4cb8-bcc7-c18a076a5e05" name="Changes" comment="Learned to load and save arrays in files">
+    <list default="true" id="ff59c65c-21e4-4cb8-bcc7-c18a076a5e05" name="Changes" comment="learned a little about PIL, reading and writing images to and from arrays">
+      <change afterPath="$PROJECT_DIR$/Working_With_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learning_NumPy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learning_NumPy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649946071810</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="learned a little about PIL, reading and writing images to and from arrays">
+      <created>1650150720954</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1650150720954</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,6 +173,18 @@
     <MESSAGE value="was testing the speed of numpy" />
     <MESSAGE value="Learned Slicing of arrays" />
     <MESSAGE value="Learned to load and save arrays in files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Learned to load and save arrays in files" />
+    <MESSAGE value="learned a little about PIL, reading and writing images to and from arrays" />
+    <option name="LAST_COMMIT_MESSAGE" value="learned a little about PIL, reading and writing images to and from arrays" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Working_With_data.py</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
